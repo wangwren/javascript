@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//城市
+function changeCity(){
+			document.myform.city.options.length = 0;
+			var cityList = new Array();
+			
+			cityList["辽宁省"] = ["沈阳","大连","抚顺"];
+			cityList["山东省"] = ["青岛","烟台","济南"];
+			
+			//获取省份的值
+			var cvalue = document.getElementById("province").value;
+			for(var j in cityList[cvalue]){ 
+					var op1 = new Option(cityList[cvalue][j],cityList[cvalue][j]);
+					document.myform.city.options.add(op1);
+				}
+				
+		}
+		
+//验证表单
+var flag = false ; // 标志是否提交表单
+	
+//用户名验证
+ function doNameAction()
+ {
+    var name  = document.getElementById('name').value;
+    var exp = new RegExp(/^[0-9]{10}$/);
+     if(!exp.test(name)) {
+	 document.getElementById("tdname").innerHTML
+	           ="<font color = red>*请输入您的学号!</font>";
+	 document.myform.name.select();  //选中该表单
+	 flag = false ;
+   }
+   else  {
+      document.getElementById("tdname").innerHTML
+	            ="<font color = green>*用户名格式正确</font>";
+	  flag = true ;
+   } 
+ } 
+ 
+ //密码验证	
+  function doPwdAction()
+ {
+    var pwd  = document.getElementById('pwd').value;
+    var exp = new RegExp(/^[a-zA-Z0-9]{5,10}$/);
+     if(!exp.test(pwd)) {
+	 document.getElementById("tdpwd").innerHTML
+	           ="<font color = red>*请输入5至10位密码!</font>";
+	 document.myform.pwd.select();  //选中该表单
+	 flag = false ;
+   }
+   else  {
+      document.getElementById("tdpwd").innerHTML
+	            ="<font color = green>*密码格式正确</font>";
+	  flag = true ;
+   } 
+ }
+ 
+ 
+ //密码验证	
+  function doQpwdAction()
+ {
+	var pwd = document.getElementById('pwd').value;
+    var qpwd  = document.getElementById('qpwd').value;
+     if(qpwd != pwd) {
+	 document.getElementById("tdqpwd").innerHTML
+	           ="<font color = red>*密码不一致!</font>";
+	 document.myform.qpwd.select();  //选中该表单
+	 flag = false ;
+   }
+   else  {
+      document.getElementById("tdqpwd").innerHTML
+	            ="<font color = green>*确认密码格式正确</font>";
+	  flag = true ;
+   } 
+ }
+	
+</script>
+<style type="text/css">
+
+	#main{
+		margin: 0px auto;
+	}
+	td{
+		font-family:"新宋体" ;
+		font-size:14px;
+	}
+	body{
+		text-align:center;
+	}
+</style>
+</head>
+
+<body>
+	<div class="main">
+    <table width="762" border="0" cellspacing="15" cellpadding="10" align="center">
+    	<th height="31" colspan="3"><h2>用户注册</h2></th>
+		<form id="myform" name="myform" action="index.html" method="post">
+        <tr>
+			<td width="129" height="33" align="right">用户名:</td>
+            <td width="175"><input type="text" id="name" name="name" onBlur="doNameAction()" /></td>
+            <td width="236"id="tdname"></td>
+        </tr>
+        <tr>
+            <td height="32" align="right">密码:</td>
+            <td><input type="password" id="pwd" name="pwd" onBlur="doPwdAction()"/></td>
+            <td width="236"id="tdpwd"></td>
+        </tr>
+        <tr>
+            <td height="32" align="right">确认密码:</td>
+            <td><input type="password" id="qpwd" name="qpwd" onBlur="doQpwdAction()"/></td>
+            <td width="236"id="tdqpwd"></td>
+		</tr>
+        <tr>
+            <td height="32" align="right">城市:</td>
+            <td><select name="province" id="province" onchange="changeCity()">
+        	<option>-----请选择省份-----</option>
+            <option value="辽宁省">辽宁省</option>
+            <option value="山东省">山东省</option>
+        </select>
+        	</td>
+        
+        	<td><select id="city" name="city">
+        	<option>-----请选择城市-----</option>
+       		</select>
+            </td>
+		</tr>
+        <tr>
+        <td height="31" colspan="2"><input type="submit" id="sub" value="提交" /></td>
+        <td height="31" colspan="1"><input type="reset" value="重置" /></td>
+        </tr>
+        <tr>
+        	<td height="31" colspan="3"><a href="login.html">返回</a></td>
+        </tr>
+    	</form>
+        </table>
+    </div>
+</body>
+</html>

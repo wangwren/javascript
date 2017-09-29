@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+body {
+	margin-top:200px;
+	background-image:url(images/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F6.jpg)
+}
+.login h2{
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1.6em;
+  font-weight: 300;
+}
+
+.login {
+	width:28%;
+  	margin:0 auto;
+    text-align: center;
+    background: #323542;
+    padding:4em;
+}
+
+.line {
+  position: relative;
+}
+
+.line span{
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  background: #5b5c61;
+  height: 1px;
+  width: 20%;
+}
+
+.myform{
+	margin-top:40px;
+}
+
+#user{
+		border:solid #999 1px;
+		border-radius:4px;
+		width:400px;
+		height:45px;
+		background-color:#858282;
+		font-size: 16px;
+	}
+#password{
+		margin-top:30px;
+		border:solid #999 1px;
+		border-radius:4px;
+		width:400px;
+		height:45px;
+		background-color:#858282;
+		font-size: 16px;
+	}
+#mysubmit{
+		margin-top:30px;
+		font-size: 20px;
+  		font-weight: 300;
+  		color: #fff;
+  		padding: 17px 15px;
+  		width:100%;
+  		border:3px solid #0bd38a;
+  		background: #0bd38a;
+  		border-radius: 0.3em;
+
+	}
+	
+.new {
+  margin: 4em 0 1em 0;
+}
+.new h3{
+  float:left;
+}
+.new h3 a,.new h4 a{
+  color:#78797C;
+  font-weight: 400;
+  font-size: 1em;
+}
+.new h3 a:hover,.new h4 a:hover{
+  text-decoration: underline;
+}
+.new h4{
+  float:right;
+}

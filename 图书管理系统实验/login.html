@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css"
+href="login.css" />
+<script type="text/javascript">
+	function myjs(){
+			var user = document.getElementById('user').value;
+			var exp = new RegExp(/^[0-9]{10}$/);
+			
+			if(!exp.test(user)){
+					alert("您输入的用户名或密码错误!");
+					return false;
+				}
+				
+			var password = document.getElementById('password').value;
+			var exp = new RegExp(/^[a-zA-Z0-9]{5,10}$/);
+			
+			if(!exp.test(password)){
+					alert("您输入的用户名或密码错误!");
+					return false;
+				}
+			
+			if(user == "1530110129" && password == "12345"){
+					return true;
+				}
+			else{
+					alert("您输入的用户名或密码错误!");
+					return false;
+				}
+		}
+</script>
+</head>
+
+<body>
+	<div class="login">
+    	<h2>请登录</h2>
+        <div class="line"><span></span></div><br />
+        <div class="location"><img src="location.png" class="img-responsive" alt="" /></div>
+        <br />
+        <div class="formdiv">
+        	<form name="myfrom" id="myform" class="myform" action="index.html"
+            method="post" onsubmit="return myjs()">
+            	<input type="text" name="user" id="user" placeholder="用户名" onmousemove="this.style.backgroundColor='#fff'" onmouseout="this.style.backgroundColor='#858282'"/><br />
+                <input type="password" name="password" id="password" placeholder="密码" onmousemove="this.style.backgroundColor='#fff'" onmouseout="this.style.backgroundColor='#858282'"/><br />
+                <input type="submit" id="mysubmit" value="登录" />
+                <div class="new">
+					<h3><a href="#">忘记密码?</a></h3>
+					<h4><a href="regist.html">注册</a></h4>
+				</div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

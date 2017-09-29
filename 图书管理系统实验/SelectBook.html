@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="Borrow.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	function checkAll(){
+		var allCheckBoxs = document.getElementsByName("book");
+		var check = document.getElementById('all');
+		if(check.checked){
+			for(var i = 0;i < allCheckBoxs.length;i++){
+					allCheckBoxs[i].checked = true;
+			}
+		}
+		else
+			for(var i = 0;i < allCheckBoxs.length;i++){
+					allCheckBoxs[i].checked = false; 
+			}
+	}
+</script>
+</head>
+
+<body>
+<div id="container">
+	<div id="border">
+		<div id="main">
+			<div id="left">
+				<div id="menu">
+					<ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li></li>
+						<li><a href="SelectBook.html">图书查询</a></li>
+						<li></li>					
+						<li><a href="borrow.html">图书借阅</a></li>
+						<li></li>
+						<li><a href="">图书借还</a></li>
+                        <li></li>                      
+						<li><a href="">修改密码</a></li>
+                        <li></li>
+                        <li><a href="">帮助中心</a></li>
+					</ul>
+			  </div>
+				<div id="menubottom">
+					<ul>
+						<li><a href="index.html">主页</a></li>
+						<li><a href="login.html">登录</a></li>
+						<li><a href="login.html">注销</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="right">	
+				<div class="book">
+                   图书名称:<input type="text" id="selecttext" /><input type="button" value="查询" id="select"/>
+                   
+		<table align="center" border="0">
+    	<tr>
+        	<td width="300" align="center" bgcolor="#B1BCEC"><input type="checkbox" id="all" onclick="checkAll()" />全选/取消<br /></td>
+            <td width="300" align="center" bgcolor="#B1BCEC">图书编号</td>
+            <td width="300" align="center" bgcolor="#B1BCEC">图书名称</td>
+            <td width="300" align="center" bgcolor="#B1BCEC">出版社</td>
+            <td width="300" align="center" bgcolor="#B1BCEC">作者</td>
+            <td width="300" align="center" bgcolor="#B1BCEC">价格/元</td>
+            <td width="300" align="center" colspan="2" bgcolor="#B1BCEC">操作</td>
+        </tr>
+		<tr>
+    		<td align="center" bgcolor="#FFFFFF"><input type="checkbox" name="book" /></td>
+            <td align="center" bgcolor="#FFFFFF">001</td>
+            <td align="center" bgcolor="#FFFFFF">javascript高级程序设计</td>
+            <td align="center" bgcolor="#FFFFFF">人民邮电出版社</td>
+            <td align="center" bgcolor="#FFFFFF">李松峰</td>
+            <td align="center" bgcolor="#FFFFFF">99.0</td>
+            <td align="center" bgcolor="#FFFFFF"><a href="">编辑</a></td>
+            <td align="center" bgcolor="#FFFFFF"><a href="">删除</a></td>
+        </tr>
+        <tr>
+    		<td align="center" bgcolor="#FFFFFF"><input type="checkbox" name="book" /></td>
+            <td align="center" bgcolor="#FFFFFF">002</td>
+            <td align="center" bgcolor="#FFFFFF">android开发</td>
+            <td align="center" bgcolor="#FFFFFF">清华大学出版社</td>
+            <td align="center" bgcolor="#FFFFFF">徐诚</td>
+            <td align="center" bgcolor="#FFFFFF">49.0</td>
+            <td align="center" bgcolor="#FFFFFF"><a href="">编辑</a></td>
+            <td align="center" bgcolor="#FFFFFF"><a href="">删除</a></td>
+        </tr>
+        
+    </table>
+    <a href="#">图书添加</a><br />
+    <div id="page">
+	第1页　共2页　<a href="SelectBook.html">首页</a>　<a href="SelectBook.html">上一页</a>　<a href="">下一页</a>　<a href="">尾页</a> 转至
+      <select name="select" size="1" onchange="window.location = this.options(this.selectedIndex).value">
+        <option selected="selected">1</option>
+        <option value=".html">2</a></option>
+      </select>页
+      </div>
+				</div>
+				
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
