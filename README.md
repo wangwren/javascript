@@ -67,7 +67,7 @@ html是一个纯本文文件（就是用txt文件改名而成），用一些标�
 - HTML4.01里面有两大种规范，每大种规范里面又各有3种小规范。所以一共6种规范。
 - HTML4.01里面规定了普通、XHTML两大种规范。
 - sublime输入的html:xt  x表示XHTML，t表示transitional
-- HTML5中极大的简化了DTD，也就是说HTML5中就没有XHTML了
+- **HTML5中极大的简化了DTD，也就是说HTML5中就没有XHTML了**
 ```html
 <!DOCTYPE html>
 <!--H5-->
