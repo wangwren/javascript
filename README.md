@@ -84,12 +84,12 @@ html是一个纯本文文件（就是用txt文件改名而成），用一些标�
 - 规范说明:
 大规范|小规范
 |----------|---------|
-|HTML4.01|Strict        严格的，体现在一些标签不能使用，比如u|
-|  |Transitional   普通的|
-|   |Frameset     带有框架的页面|
-|XHTML1.0 更为严格(严格体现在小写标签、闭合、引号)|Strict        严格的，体现在一些标签不能使用，比如u|
-|  |Transitional   普通的|
-|   |Frameset     带有框架的页面|
+|----------HTML4.01--------------|----------------Strict 严格的，体现在一些标签不能使用，比如u----------------|
+|----------------|----------------Transitional   普通的----------------|
+| ---------------- |----------------Frameset     带有框架的页面----------------|
+|----------------XHTML1.0 更为严格(严格体现在小写标签、闭合、引号)----------------|----------------Strict        严格的，体现在一些标签不能使用，比如u----------------|
+| ---------------- |----------------Transitional   普通的----------------|
+| ----------------|----------------Frameset     带有框架的页面----------------|
 ### 字符集
 ```html
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -124,7 +124,7 @@ html是一个纯本文文件（就是用txt文件改名而成），用一些标�
 这些关键词，就是告诉搜索引擎，这个网页是干嘛的，能够提高搜索命中率。让别人能够找到你，搜索到你。  
 所以，一个比较完整的骨架是这样：  
 ```html
-1	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
