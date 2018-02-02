@@ -573,7 +573,7 @@ css
 css
 ```css
 <style type="text/css">
-/**注意标签选择器前必须加#，后跟标签id名称*/
+/**注意id选择器前必须加#，后跟标签id名称*/
 		#para2{
 		color:red;
 		}
