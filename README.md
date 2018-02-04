@@ -868,7 +868,7 @@ font-size:60px important;      →  不能忘记感叹号
 ![](./_image/2018-02-04-21-36-23.jpg)  
 这个盒子width:200px; height:200px; 但是真实占有的宽高是302*302。 这是因为还要加上padding、border。宽度和真实占有宽度，不是一个概念！！  
 **真实占有宽度=  左border  +  左padding  +  width  +  右padding  +  右border**  
-**如果想保持一个盒子的真实占有宽度不变，那么加width就要减padding。加padding就要减width。  **
+**如果想保持一个盒子的真实占有宽度不变，那么加width就要减padding。加padding就要减width。**
 #### 认识padding
 - padding就是内边距。padding的区域有背景颜色，css2.1前提下，并且背景颜色一定和内容区域的相同。
 也就是说，background-color将填充所有boder以内的区域。
@@ -998,7 +998,7 @@ border-left: none;
 ```css
 border-left-width: 0;
 ```
-使用border制作三角形:[border绘制三角形]()  
+使用border制作三角形:[border绘制三角形](https://github.com/wangwren/javascript/blob/master/_%E4%BD%BF%E7%94%A8border%E5%81%9A%E4%B8%89%E8%A7%92%E5%BD%A2.html)  
 ### 标准文档流
 - web页面的制作，是个“流”，必须从上而下。
 - 标准文档流的围观现象
