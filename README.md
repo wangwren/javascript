@@ -55,6 +55,17 @@
         - [继承性](#继承性)
         - [层叠性](#层叠性)
         - [!important标记](#important标记)
+    - **[盒模型](#盒模型)**
+        - [盒子中的区域](#盒子中的区域)
+        - [认识padding](#认识padding)
+        - [border](#border)
+    - **[标准文档流](#标准文档流)**
+        - [块级元素和行内元素](#块级元素和行内元素)
+        - [块级元素和行内元素的相互转换](#块级元素和行内元素的相互转换)
+    - **[浮动](#浮动)**
+        - [浮动的元素脱标](#浮动的元素脱标)
+        - [浮动的元素互相贴靠](#浮动的元素互相贴靠)
+        - [浮动的元素有字围效果](#浮动的元素有字围效果)
 ## 快捷键
 - 键盘上除了有字母、数字之外，还有一些特殊的按键：ctrl、shift、alt、tab
     - ctrl键是英语control“控制”的意思，这个按键，单独按没有任何作用，都要和其他的按键一起按才有用。比如ctrl+c，表示同时按住ctrl键和c键，一会儿将知道这个功能是复制。
@@ -843,6 +854,255 @@ font-size:60px important;      →  不能忘记感叹号
     - !important不影响就近原则(该近还是近)
 
 ![](./_image/2018-02-03-18-41-30.jpg)
+### 盒模型
+#### 盒子中的区域
+- 一个盒子中主要的属性就5个：width、height、padding、border、margin。
+    - width是“宽度”的意思，CSS中width指的是**内容的宽度**，而不是盒子的宽度。
+    - height是“高度”的意思，CSS中height指的是**内容的高度**，而不是盒子的高度。
+    - padding是“内边距”的意思。
+    - border是“边框”。
+    - margin是“外边距”。
+- 盒模型的示意图：
+![](./_image/2018-02-04-21-35-52.jpg)
+- 代码演示：
+![](./_image/2018-02-04-21-36-23.jpg)  
+这个盒子width:200px; height:200px; 但是真实占有的宽高是302*302。 这是因为还要加上padding、border。宽度和真实占有宽度，不是一个概念！！  
+**真实占有宽度=  左border  +  左padding  +  width  +  右padding  +  右border**  
+**如果想保持一个盒子的真实占有宽度不变，那么加width就要减padding。加padding就要减width。  **
+#### 认识padding
+- padding就是内边距。padding的区域有背景颜色，css2.1前提下，并且背景颜色一定和内容区域的相同。
+也就是说，background-color将填充所有boder以内的区域。
+- padding是4个方向的，所以我们能够分别描述4个方向的padding。
+    - 方法有两种，第一种写小属性；第二种写综合属性，用空格隔开。
+- 小属性
+```css
+padding-top: 30px;
+padding-right: 20px;
+padding-bottom: 40px;
+padding-left: 100px;
+```
+top上、right右、bottom下、left左。  
+这种属性，就是复合属性。比如不写padding-left那么就是没有左内边距。  
+- 综合属性(用空格隔开)
+```css
+padding:30px 20px 40px 100px;
+```
+这四个值得顺序为:**上、右、下、左**  
+![](./_image/2018-02-04-21-43-19.jpg)  
+- 如果只写3个值：
+```css
+padding: 20px 30px 40px;
+```
+**上、右、下、??和右一样**  
+![](./_image/2018-02-04-21-44-54.jpg)
+- 如果只写2个值：
+```css
+padding: 30px 40px;
+```
+![](./_image/2018-02-04-21-45-30.jpg)
+- 用小属性层叠大属性：
+```css
+padding: 20px;
+padding-left: 30px;
+```
+对应的盒模型图：  
+![](./_image/2018-02-04-21-48-50.jpg)  
+不能把小属性写在大属性前面，这样没有意义，大属性会替换掉小属性。  
+- 一些元素，默认带有padding，比如ul标签。
+- 所以，我们为了做站的时候，便于控制，总是喜欢清除这个默认的padding
+```css
+*{
+	margin: 0;
+	padding: 0;
+}
+```
+- \*的效率不高，所以我们使用并集选择器，罗列所有的标签
+```css
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+   margin:0;
+   padding:0;
+}
+```
+#### border
+- 边框有三个要素：粗细、线型、颜色。
+- 颜色如果不写，默认是黑色。另外两个属性不写，显示不出来边框。
+```css
+border: 1px dashed red;
+```
+所有的线型:  
+![](./_image/2018-02-04-21-55-04.jpg)  
+- border是一个大综合属性
+```css
+border: 1px dashed red;
+```
+就是把4个边框，都设置为1px宽度、线型实线、red颜色。  
+- border属性能够被拆开，有两大种拆开的方式：
+    - 按3要素:border-width、border-style、border-color
+    - 按方向：border-top、border-right、border-bottom、border-left
+- 按3要素拆开：
+```css
+border-width:10px;    → 边框宽度
+border-style:solid;     → 线型
+border-color:red;      → 颜色。
+```
+等价于：
+```css
+border:10px solid red;
+```
+- 如果某一个小要素后面是空格隔开的多个值，那么就是**上右下左**的顺序：
+```css
+border-width:10px 20px;
+border-style:solid dashed dotted;
+border-color:red green blue yellow;
+```
+![](./_image/2018-02-04-22-00-22.jpg)
+- 按方向来拆
+```css
+border-top:10px solid red;
+border-right:10px solid red;
+border-bottom:10px solid red;
+border-left:10px solid red;
+```
+等价于:
+```css
+border:10px solid red;
+```
+- 按方向还能再拆一层，就是把每个方向的，每个要素拆开，一共12条语句：
+```css
+border-top-width:10px;
+border-top-style:solid;
+border-top-color:red;
+border-right-width:10px;
+border-right-style:solid;
+border-right-color:red;
+border-bottom-width:10px;
+border-bottom-style:solid;
+border-bottom-color:red;
+border-left-width:10px;
+border-left-style:solid;
+border-left-color:red;
+```
+等价于:
+```css
+border:10px solid red;
+```
+- border可以没有
+```css
+border:none;
+```
+- 某一条边没有
+```css
+border-left: none;
+```
+- 也可以调整左边边框的宽度为0：
+```css
+border-left-width: 0;
+```
+使用border制作三角形:[border绘制三角形]()  
+### 标准文档流
+- web页面的制作，是个“流”，必须从上而下。
+- 标准文档流的围观现象
+    - 空白折叠现象：
+        - 比如，如果我们想让img标签之间没有空隙，必须紧密连接：`<img src="images/0.jpg" /><img src="images/1.jpg" /><img src="images/2.jpg" />`
+    - 高矮不齐，底边对齐
+    - 自动换行，一行写不满，换行写。
+#### 块级元素和行内元素
+- 标准文档流等级严森。标签分为两种等级:
+    - 块级元素
+        - 霸占一行，不能与其他任何元素并列。
+        - 能设置宽、高。
+        - 如果不设置宽度，那么宽度将默认变为父亲的100%。
+    - 行内元素
+        - 与其他行内元素并排。
+        - 不能设置宽、高。默认的宽度，就是文字的宽度。
+- 在HTML中，我们已经将标签分过类，当时分为了：文本级、容器级。
+    - 文本级：p、span、a、b、i、u、em
+    - 容器级：div、h系列、li、dt、dd
+- CSS的分类和上面的很像，就p不一样：
+    - 所有的文本级标签，都是行内元素，**除了p，p是个文本级，但是是个块级元素**。
+    - 所有的容器级标签都是块级元素。
+#### 块级元素和行内元素的相互转换
+- 块级元素可以设置为行内元素
+- 行内元素可以设置为块级元素
+```css
+div{
+	display: inline;
+	background-color: pink;
+	width: 500px;
+	height: 500px;
+}
+```
+- display是“显示模式”的意思，用来改变元素的行内、块级性质
+- inline就是“行内”。
+- 一旦，给一个标签设置`display:inline;`那么，这个标签将立即变为行内元素。此时它和一个span无异：
+    - 此时这个div不能设置宽度、高度；
+    - 此时这个div可以和别人并排了
+同理:  
+```css
+span{
+	display: block;
+	width: 200px;
+	height: 200px;
+	background-color: pink;
+}
+```
+- “block”是“块”的意思
+- 让标签变为块级元素。此时这个标签，和一个div无异：
+    - 此时这个span能够设置宽度、高度
+    - 此时这个span必须霸占一行了，别人无法和他并排
+    - 如果不设置宽度，将撑满父亲
+- css中一共有三种手段，使一个元素脱离标准文档流：
+    - 浮动
+    - 绝对定位
+    - 固定定位
+### 浮动
+- 浮动时css里布局用的最多的属性
+![](./_image/2018-02-04-22-21-35.jpg)
+```css
+box1{
+    float: left;
+	width: 300px;
+	height: 400px;
+	background-color: yellowgreen;
+	}
+.box2{
+	float: left;
+	width: 400px;
+	height: 400px;
+	background-color: skyblue;
+}
+```
+两个元素并排了，并且两个元素都能够设置宽度、高度了（这在刚才的标准流中，不能实现）。  
+#### 浮动的元素脱标
+即浮动的元素脱离标准文档流。  
+- 证明1
+![](./_image/2018-02-04-22-23-57.jpg)
+- 证明2
+ 一个span标签不需要转成块级元素，就能够设置宽度、高度了。所以能够证明一件事儿，就是所有标签已经不区分行内、块了。也就是说，**一旦一个元素浮动了，那么，将能够并排了，并且能够设置宽高了。无论它原来是个div还是个span。**  
+```css
+span{
+	float: left;
+	width: 200px;
+	height: 200px;
+	background-color: orange;
+}
+```    
+#### 浮动的元素互相贴靠
+![](./_image/2018-02-04-22-26-02.jpg)
+![](./_image/2018-02-04-22-26-10.jpg)
+![](./_image/2018-02-04-22-26-17.jpg)
+#### 浮动的元素有字围效果
+```html
+<div>
+	<img src="images/1.jpg" alt="" />
+</div>
+<p>123文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+</p>
+```
+让div浮动，p不浮动：  
+![](./_image/2018-02-04-22-28-03.jpg)  
+div挡住了p，但是p中的文字不会被挡住，形成“字围”效果。  
+**永远不是一个东西单独浮动，浮动都是一起浮动，要浮动，大家都浮动。**
 
 
 
