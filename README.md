@@ -1250,7 +1250,7 @@ div{
 这个属性的本意，就是将所有溢出盒子的内容，隐藏掉。但是，我们发现这个东西能够用于浮动的清除。  
 我们知道，一个父亲，不能被自己浮动的儿子撑出高度，但是，如果这个父亲加上了overflow:hidden；那么这个父亲就能够被浮动的儿子撑出高度了。这个现象，不能解释，就是浏览器的小偏方。  
 并且,overflow:hidden;能够让margin生效。  
-**清除浮动练习:**[练习]()  
+**清除浮动练习:**[练习](https://github.com/wangwren/javascript/blob/master/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%BB%83%E4%B9%A0.html)  
 效果截图:  
 ![](./_image/2018-02-05-22-28-21.jpg)
 
@@ -1316,7 +1316,8 @@ margin-right: auto;
 float: left;
 margin-right: 40px;
 ```
-- IE6的3px bug
+- IE6的3px bug  
+
 ![](./_image/2018-02-05-22-16-21.jpg)  
 解决:  
 - 不用管，因为根本就不允许用儿子踹父亲。所以，如果你出现了3px bug，说明你的代码不标准。
