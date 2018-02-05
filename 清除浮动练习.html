@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.news{
+			width: 400px;
+			height: 200px;
+			border: 1px solid black;
+			margin: 100px;
+			padding-left: 5px;
+		}
+
+		.news ul{
+			list-style: none;
+		}
+
+		.news ul li{
+			line-height: 40px;
+			border-bottom: 1px dashed black;
+			/*清除浮动*/
+			overflow: hidden;
+		}
+
+		.news ul li .content{
+			float: left;
+		}
+
+		.news ul li .date{
+			float: right
+		}
+
+		/*绘制三角形*/
+		.news ul li .triangle{
+			width: 0px;
+			height: 0px;
+			border: 6px solid white;
+			border-left-color:blue; 
+			float: left;
+			margin-top: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div class="news">
+		<ul>
+			<li>
+				<div class="triangle"></div>
+				<span class="content">哈哈哈哈哈哈哈</span>
+				<span class="date">2018-02-05</span>
+			</li>
+			<li>
+				<div class="triangle"></div>
+				<span class="content">哈哈哈哈哈哈哈</span>
+				<span class="date">2018-02-05</span>
+			</li>
+			<li>
+				<div class="triangle"></div>
+				<span class="content">哈哈哈哈哈哈哈</span>
+				<span class="date">2018-02-05</span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
