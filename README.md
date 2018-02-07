@@ -1321,5 +1321,226 @@ margin-right: 40px;
 ![](./_image/2018-02-05-22-16-21.jpg)  
 解决:  
 - 不用管，因为根本就不允许用儿子踹父亲。所以，如果你出现了3px bug，说明你的代码不标准。
+### 行高和字号
+#### 行高
+- CSS中，所有的行，都有行高。盒模型的padding，绝对不是直接作用在文字上的，而是作用在“行”上的。
+```css
+line-height: 40px;
+```
+![](./_image/2018-02-07-09-14-34.jpg)  
+- 文字，是在自己的行里面居中的。比如，现在文字字号14px，行高是24px。
+![](./_image/2018-02-07-09-15-00.jpg)
+- 为了严格保证字在行里面居中，我们的约定： 行高、字号，一般都是偶数。这样，它们的差，就是偶数，就能够被2整除。
+#### 单行文本垂直居中
+- 文本在行里面居中:即行高=盒子高。
+![](./_image/2018-02-07-09-16-18.jpg)  
+- 需要注意的是，这个小技巧，行高=盒子高。  **只适用于单行文本垂直居中**！！不适用于多行。
+- 如果想让多行文本垂直居中，需要设置盒子的padding：
+![](./_image/2018-02-07-09-17-13.jpg)
+#### font属性
+- 使用font属性，能够将字号、行高、字体，能够一起设置。
+```css
+font: 14px/24px “宋体”;
+```
+等价于:  
+```css
+font-size:14px;
+line-height:24px;
+font-family:"宋体";
+```
+font-family就是“字体”。
+- 网页中不是所有字体都能用，因为这个字体要看用户的电脑里面装没装。如果用户电脑里面没有这个字体，那么就会变成宋体。
+- 为了防止用户电脑里面，没有微软雅黑这个字体。就要用英语的逗号，隔开备选字体，就是说如果用户电脑里面，没有安装微软雅黑字体，那么就是宋体。
+```css
+font-family: "微软雅黑","宋体";
+```
+备选字体可以有无数个，用逗号隔开。  
+- 我们要将英语字体，放在最前面，这样所有的中文，就不能匹配英语字体，就自动的变为后面的中文字体。
+- font属性能够将font-size、line-height、font-family合三为一
+```css
+font:12px/30px  "Times New Roman","Microsoft YaHei","SimSun";
+```
+- 行高可以用百分比，表示字号的百分之多少。一般来说，都是大于100%的，因为行高一定要大于字号。
+```css
+font:12px/200% “宋体”
+```
+等价于  
+```css
+font:12px/24px “宋体”;
+```
+### 超链接的美化
+#### 伪类
+- 也就是说，同一个标签，根据用户的某种状态不同，有不同的样式。这就叫做“伪类”。
+- 类就是工程师加的，比如div属于box类，很明确，就是属于box类。但是a属于什么类？不明确。因为要看用户有没有点击、有没有触碰。所以，就叫做“伪类”。
+- 伪类用冒号来表示。
+```css
+a:link{
+	color:red;
+}
+a:visited{
+	color:orange;
+}
+a:hover{
+	color:green;
+}
+a:active{
+	color:black;
+}
+```
+- :link  	表示， 用户没有点击过这个链接的样式。 是英语“链接”的意思。
+- :visited	表示， 用户访问过了这个链接的样式。 是英语“访问过的”的意思。
+- :hover	表示， 用户鼠标悬停的时候链接的样式。 是英语“悬停”的意思。
+- :active	表示， 用户用鼠标点击这个链接，但是不松手，此刻的样式。 是英语“激活”的意思。
+- 这四种状态，在css中，必须**按照固定的顺序写**，如果不按照顺序，那么将失效。
+#### 超链接美化
+- a标签中，描述盒子； 伪类中描述文字的样式、背景。
+.nav ul li a{
+    /*必须转成块级元素*/
+	display: block;
+	width: 120px;
+	height: 40px;
+}
+.nav ul li a:link ,.nav ul li a:visited{
+	text-decoration: none;
+	background-color: yellowgreen;
+	color:white;
+}
+.nav ul li a:hover{
+	background-color: purple;
+	font-weight: bold;
+	color:yellow;
+}
+**所有的a不继承text、font这些东西。因为a自己有一个伪类的权重。**  
+- a:link、a:visited都是可以省略的，简写在a标签里面。也就是说，a标签涵盖了link、visited的状态。
+```css
+.nav ul li a{
+	display: block;
+	width: 120px;
+	height: 50px;
+	text-decoration: none;
+	background-color: purple;
+	color:white;
+}
+.nav ul li a:hover{
+	background-color: orange;
+}
+```
+### background系列属性
+#### background-color属性
+背景颜色属性。  
+css2.1中，颜色的表示方法有哪些？一共有三种：单词、rgb表示法、十六进制表示法  
+##### 用英语单词来表示
+能够用英语单词来表述的颜色，都是简单颜色。  
+红色  
+```css
+background-color: red;
+```
+##### 用rgb方法来表示
+红色  
+```css
+background-color: rgb(255,0,0);
+```
+rgb表示三原色“红”red、“绿”green、“蓝”blue。光学显示器，每个像素都是由三原色的发光原件组成的，靠明亮度不同调成不同的颜色的。  
+- 用逗号隔开，r、g、b的值，每个值的取值范围0~255，一共256个值。
+- 如果此项的值，是255，那么就说明是纯色。
+绿色
+```css
+background-color: rgb(0,255,0);
+```
+蓝色  
+```css
+background-color: rgb(0,0,255);
+```
+黑色  
+```css
+background-color: rgb(0,0,0);
+```
+白色  
+```css
+background-color: rgb(255,255,255);
+```
+颜色可以叠加，比如黄色就是红色和绿色的叠加  
+```css
+background-color: rgb(255,255,0);
+```
+##### 十六进制表示法
+红色  
+```css
+background-color: #ff0000;
+```
+所有用#开头的值，都是16进制的。
+- 16进制表示法，是两位两位看，看r、g、b，但是没有逗号隔开。
+- 前两位表示r，接着两位表示g，最后两位表示b
+#### background-image
+用于给盒子加上背景图片。  
+```css
+/*这里是相对地址*/
+background-image:url(images/1.jpg);
+```
+- 背景默认是会被平铺满的。
+- padding的区域也有背景图。
+#### background-repeat属性
+- 设置背景图是否重复的，重复方式的。
+- background-repeat属性，有三种值：
+    - background-repeat:no-repeat;   不重复
+    - background-repeat:repeat-x;    横向重复
+    - background-repeat:repeat-y;    纵向重复
+#### background-position属性
+- 背景定位属性
+![](./_image/2018-02-07-10-46-21.jpg)
+```css
+background-position:向右移动量 向下移动量;
+```
+- 定位属性可以是负数：
+![](./_image/2018-02-07-10-46-59.jpg)
+- css精灵
+原理:  
+![](./_image/2018-02-07-10-47-28.jpg)
+- “css精灵”，英语css sprite，所以也叫做“css雪碧”技术。是一种CSS图像合并技术，该方法是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分。
+- css精灵有什么优点，就是减少了http请求。比如4张小图片，原本需要4个http请求。但是用了css精灵，小图片变为了一张图，http请求只有1个了。
+- 用单词描述
+```css
+background-position: 描述左右的词儿  描述上下的词儿;
+```
+- 描述左右的词儿： left、 center、right
+- 描述上下的词儿： top 、center、bottom
+```css
+background-position: right bottom;
+```
+右下角  
+![](./_image/2018-02-07-10-50-56.jpg)  
+用途:  
+大背景图居中:  
+![](./_image/2018-02-07-10-51-37.jpg)
+#### background-attachment
+- 背景是否固定
+```css
+background-attachment:fixed;
+```
+背景就会被固定住，不会被滚动条滚走。
+#### background综合属性
+- background属性和border一样，是一个综合属性：
+```css
+background:red url(1.jpg) no-repeat 100px 100px fixed;
+```
+等价于:
+```css
+background-color:red;
+background-image:url(1.jpg);
+background-repeat:no-repeat;
+background-position:100px 100px;
+background-attachment:fixed;
+```
+可以任意省略部分:
+```css
+background: red;
+```
 
-
+```css
+background: blue url(images/wuyifan.jpg) no-repeat 100px 100px;
+```
+![](./_image/2018-02-07-10-55-06.jpg)  
+精灵的使用:  
+```css
+background: url(images/taobao.png) no-repeat 0 -133px;
+```
