@@ -98,7 +98,7 @@
         - [绝对定位](#绝对定位)
         - [固定定位](#固定定位)
         - [z-index](#z-index)
-- **[JS]()**
+- **[JS](#https://github.com/wangwren/javascript/blob/master/JavaScript.md)**
 ## 快捷键
 - 键盘上除了有字母、数字之外，还有一些特殊的按键：ctrl、shift、alt、tab
     - ctrl键是英语control“控制”的意思，这个按键，单独按没有任何作用，都要和其他的按键一起按才有用。比如ctrl+c，表示同时按住ctrl键和c键，一会儿将知道这个功能是复制。
