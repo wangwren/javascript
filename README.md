@@ -1682,6 +1682,77 @@ margin-left: -300px;   → 宽度的一半
 - 如果大家都没有z-index值，或者z-index值一样，那么谁写在**HTML后面**，谁在上面能压住别人。定位了的元素，永远能够压住没有定位的元素。
 - 从父现象：父亲怂了，儿子再牛逼也没用。
 ![](./_image/2018-02-09-10-10-20.jpg)
+## CSS补充
+### Favicon图标
+- 即网页标题栏中的小图标，它不是一个图片，就是图标，一般放在根目录，命名为`favicon .ico`
+- 在head标签中引入，写法
+```css
+<link rel="shortcut icon" href="favicon.ico" />
+```
+![](./_image/2018-02-18-00-18-23.jpg)
+### CSS位置来分
+- 行内式css
+```html
+<div class="fr" style="color:red;">aa</div>
+```
+- 内嵌式样式
+```css
+<style>
+    .one {
+        width: 200px;
+    }
+</style>
+```
+- 外链式样式
+```
+<link rel=”stylesheet” href =”css/base.css” />
+```
+### 字体综合写
+```
+font:字体加粗 字号/行高 字体
+```
+必须要有字号和字体。  
+字体加粗:font-weight:bold;其等价于 font-weight:700;
+### 一些标签
+|标签名|语义|
+|---------|----------|
+|s    del|删除线|
+|i     em|倾斜|
+|u    ins|下划线|
+### 零碎
+- 字体加粗
+```
+font-weight:700;
+```
+- 让字体不加粗
+```
+font-weight:normal;
+```
+- 字体倾斜
+```
+font-style:italic;
+一般不用
+```
+- 字体不倾斜
+```
+font-style:normal;
+```
+- 不下划线、不删除线
+```
+text-decoration:none;
+```
+- 定位
+    - position:static；静态定位，约等于标准流
+- 浮动的不浮动
+```
+float:none;
+```
+- 定位的不定位
+```
+position:static;
+```
+
+
 
 
 
