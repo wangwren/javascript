@@ -62,3 +62,24 @@ s,i,em{font-style:normal;text-decoration:none;}
     line-height: 30px; /* 设置行高，使文字垂直居中*/
     background-color: #F1F1F1;
 }
+.dt {
+    padding: 0 20px 0 10px;
+    /*子绝父相*/
+    position: relative;
+}
+.dt i{
+    font: 400 15px/15px "宋体";
+    /*绝对定位，这样才能移动位置,也不需要转成块级元素了*/
+    position: absolute;
+    top: 13px;
+    right: 2px;
+    /*要的是菱形的一半，就切一半*/
+    height: 7px;
+    overflow: hidden;
+    width: 15px;
+}
+.dt s {
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
