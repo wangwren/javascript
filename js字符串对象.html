@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str = "   ab c    ";
+
+		alert("-" + mytrim(str) + "-");
+
+		//去除前后空格的函数
+		function mytrim(str) {
+			var start = 0;	//起始
+			var end = 0;	//终止
+			//编写字符串去除前后空格
+			for (var i = 0; i < str.length; i++) {
+				if (str.charAt(i) != " ") {
+					if(start == 0){
+						start = i;
+						end = i;
+					
+					}
+					if(start <= end){
+						end = i;
+					}
+				}
+			}
+
+			//截取
+			return str.substring(start,end + 1);
+			}
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
