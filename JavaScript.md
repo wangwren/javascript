@@ -150,7 +150,7 @@ alert(getSum());
 						* substr(start,length)				截取字符串，从哪开始，截取多长
 				
 				
-			* 定义一个方法：可以去掉字符串两边的空格。	
+			*定义一个方法：可以去掉字符串两边的空格。[代码](https://github.com/wangwren/javascript/blob/master/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.html)	
 				- var str = "  ab c     ";
 				- var newStr = mytrim(str);
 				- newStr = "ab c";
