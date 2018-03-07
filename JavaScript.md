@@ -129,57 +129,46 @@ alert(getSum());
 - 声明
     - var str = "abc";
     - var str = new String("abc");
-				* 属性：length：字符串的长度	
-				* 方法：
-					* 和HTML相关的方法（书写没有提示的）
-						* bold()			使用粗体显示显示字符串
-						* fontcolor(color)		参数是必须的，设置字体的颜色
-						* fontsize(size)		设置字体的大小（1-7）
-						* italics()				斜体
-						* link(url)				设置链接
-						* sub()					下标
-						* sup()					上标
-						
-					* 和java中String对象类似的
-						* charAt(index)				返回指定位置的字符
-						* indexOf(str,fromIndex)	检索字符串，没有返回-1
-						* lastIndexOf(str,fromIndex)	从后向前检索字符串
-						* replace(要替换的字符串,替换成啥)		
-						
-						* substring(start,stop)				截取字符串
-						* substr(start,length)				截取字符串，从哪开始，截取多长
-				
-				
-			*定义一个方法：可以去掉字符串两边的空格。[代码](https://github.com/wangwren/javascript/blob/master/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.html)	
-				- var str = "  ab c     ";
-				- var newStr = mytrim(str);
-				- newStr = "ab c";
-				
-				
-				* String 对象
-				* 声明
-					- var str = "abc";
-					- var str = new String("abc");
-					
-				* 属性：length：字符串的长度	
-				* 方法：
-					* 和HTML相关的方法（书写没有提示的）
-						* bold()			使用粗体显示显示字符串
-						* fontcolor(color)		参数是必须的，设置字体的颜色
-						* fontsize(size)		设置字体的大小（1-7）
-						* italics()				斜体
-						* link(url)				设置链接
-						* sub()					下标
-						* sup()					上标
-						
-					* 和java中String对象类似的
-						* charAt(index)				返回指定位置的字符
-						* indexOf(str,fromIndex)	检索字符串，没有返回-1
-						* lastIndexOf(str,fromIndex)	从后向前检索字符串
-						* replace(要替换的字符串,替换成啥)		
-						
-						* substring(start,stop)				截取字符串
-						* substr(start,length)				截取字符串，从哪开始，截取多长
+        - 属性：length：字符串的长度	
+        - 方法：
+        - 和HTML相关的方法（书写没有提示的）
+        - bold()			使用粗体显示显示字符串
+        - fontcolor(color)		参数是必须的，设置字体的颜色
+        - fontsize(size)		设置字体的大小（1-7）
+        - italics()				斜体
+        - link(url)				设置链接
+        - sub()					下标
+        - sup()					上标
+    - 和java中String对象类似的
+        - charAt(index)				返回指定位置的字符
+        - indexOf(str,fromIndex)	检索字符串，没有返回-1
+        - lastIndexOf(str,fromIndex)	从后向前检索字符串
+        - replace(要替换的字符串,替换成啥)		
+        - substring(start,stop)				截取字符串
+        - substr(start,length)				截取字符串，从哪开始，截取多长
+			
+    - 定义一个方法：可以去掉字符串两边的空格。[代码](https://github.com/wangwren/javascript/blob/master/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.html)	
+- String 对象
+    - 声明
+        - var str = "abc";
+        - var str = new String("abc");
+    - 属性：length：字符串的长度	
+    - 方法：
+        - 和HTML相关的方法（书写没有提示的）
+        - bold()			使用粗体显示显示字符串
+        - fontcolor(color)		参数是必须的，设置字体的颜色
+        - fontsize(size)		设置字体的大小（1-7）
+        - italics()				斜体
+        - link(url)				设置链接
+        - sub()					下标
+        - sup()					上标
+    - 和java中String对象类似的
+        - charAt(index)				返回指定位置的字符
+        - indexOf(str,fromIndex)	检索字符串，没有返回-1
+        - lastIndexOf(str,fromIndex)	从后向前检索字符串
+        - replace(要替换的字符串,替换成啥)		
+        - substring(start,stop)				截取字符串
+        - substr(start,length)				截取字符串，从哪开始，截取多长
 
 
 
