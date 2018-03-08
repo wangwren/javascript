@@ -169,6 +169,12 @@ alert(getSum());
         - replace(要替换的字符串,替换成啥)		
         - substring(start,stop)				截取字符串
         - substr(start,length)				截取字符串，从哪开始，截取多长
+	
+	
+	
+	
+	
+	
 
 
 
