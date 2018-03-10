@@ -169,6 +169,56 @@ alert(getSum());
         - replace(要替换的字符串,替换成啥)		
         - substring(start,stop)				截取字符串
         - substr(start,length)				截取字符串，从哪开始，截取多长
+- Array对象
+    - 声明数组
+        - var arr = [12,33]
+        - var arr = new Array(4,4);
+    - 属性:length:长度
+    - 方法:
+        - concat(元素或数组)，拼接数组，返回新的数组
+        - join(s)  通过s标识，相当java中的split，用指定符号分隔。返回字符串
+        - pop()    删除末尾的元素，返回最后一个元素
+        - push()   向末尾添加元素，返回新数组的长度
+        - sort()     排序的方法
+- Date日期对象
+    - var date = new Date();    当前的日期
+    - toLocaleString()     转换本地的日期格式
+    - toLocalDateString()    只包含日期
+    - toLocalTimeString()    只包含时间
+    - getDate()    返回一个月中的某一天(1-31)
+    - getDay()     返回一周中的某一天(0-6)   0代表礼拜天
+    - getMonth()   返回月份(0-11)  0代表一月
+    - getFullYear()     返回年份
+    - getTime()     返回毫秒数
+    - setTime()     通过毫秒数获取日期
+    - parse(str)    解析字符串，返回毫秒数
+        - Date.parse(str);
+        - str: 2014-11-14  解析不了
+            - 11/14/2014可以解析
+            - 2014,11,14  可以解析
+- Math和数字相关的对象
+    - Math对象的静态方法
+    - ceil(x)   上舍入
+    - floor(x)   下舍入
+    - round(x)   四舍五入
+    - random()   0-1的随机数
+- RegExp对象
+    - 正则表达式对象
+    - 应用:编写注册的表单，对表单输入的内容进行校验
+        - var reg = new RegExp("表达式");   开发中不经常使用
+        - var reg = /表达式/   开发中经常使用
+        - var reg = /^表达式$/   开发中经常使用
+            - exec(string)   不经常使用，如果匹配，返回匹配结果
+            - test(string)   经常使用，如果匹配，返回是true，如果不匹配，返回是false
+- 全局函数
+    - 使用全局函数，不需要任何的对象。
+    - 全局函数可以直接拿过来使用。
+    - global帮着管理全局函数。
+    - eval()		可以解析字符串，执行字符串中间的js代码
+    - isNaN()		判断是否是非数字值
+    - parseInt()	解析字符串，返回整数
+    - encodeURI()	进行编码
+    - decodeURI()	解析解码
 	
 	
 	
