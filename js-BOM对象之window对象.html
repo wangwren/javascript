@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+		
+		//询问方法
+		function del(){
+			if (window.confirm("确定要删除吗？")) {
+				alert("已删除");
+			}else{
+				alert("nmb");
+			}
+		}
+
+
+		//浏览器窗口移动,IE支持
+		function run1() {
+			window.moveBy(200,200);
+		}
+
+
+		var m;
+		//定时做某件事情
+		function run2(){
+
+			//每两秒执行一下run3函数
+			m = window.setInterval("run3()",2000);
+
+			//三秒后执行run3，只做一次
+			//window.setTimeout("run3()",3000);
+		}
+
+		function run3() {
+			
+			alert("过了两秒");
+		}
+
+		//取消定时
+		function run4() {
+			
+			window.clearInterval(m);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="btn1" value="删除" onclick="del()"><br/>
+	<br/>
+	<input type="button" name="btn2" value="移动" onclick="run1()"><br/>
+	<br/>
+	<input type="button" name="btn2" value="定时" onclick="run2()"><br/>
+	<br/>
+	<input type="button" name="btn2" value="取消定时" onclick="run4()"><br/>
+	<br/>
+
+</body>
+</html>
