@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>图片移动案例</title>
+	<style type="text/css">
+		#divId{
+			position: absolute;
+			/* top: 100px;
+			left: 200px; */
+		}
+	</style>
+
+
+	<script type="text/javascript">
+		function run() {
+			//alert("hehe");
+			document.getElementById("divId").style.top = Math.random() * 100 + "px";
+			document.getElementById("divId").style.left = Math.random() * 200 + "px";
+
+			//定时移动，调用自己
+			window.setTimeout("run()",1000);
+		}
+	</script>
+</head>
+
+<!-- onload 属性在页面加载后执行 -->
+<body onload="run()">
+	<div id="divId">
+		<img src="xiaoyu.png" alt="">
+	</div>
+</body>
+</html>
