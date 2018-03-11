@@ -219,6 +219,44 @@ alert(getSum());
     - parseInt()	解析字符串，返回整数
     - encodeURI()	进行编码
     - decodeURI()	解析解码
+### BOM浏览器对象模型
+- (Brower Object Model)
+- Window  窗口对象
+    - alert()		弹出提示框
+    - confirm("参数")		询问框
+        - 提供俩按钮，确定和取消
+        - 如果点击是确定，返回true，如果点击取消，返回false
+    - moveBy()			移动浏览器
+    - setInterval("函数",毫秒值)		定时相关的
+        - 每隔毫秒值执行一次函数
+        - 返回唯一的id值
+    - setTimeout("函数",毫秒值)
+        - 到了毫秒值后执行一次函数
+        - 返回唯一的id值
+    - 清除定时
+        - clearInterval(id的值)
+        - clearTimeout()
+    - close()	关闭浏览器的窗口
+    - open()	打开浏览器窗口
+    - 属性
+        - opener 返回对创建此窗口的窗口的引用。
+        - win  open()	弹出baidu的窗口
+            - 在baidu窗口中  baidu.opener	得到了win的引用。
+- Navigator   和浏览器版本相关的对象
+    - userAgent    获取浏览器的相关的信息
+    - window.navigator.userAgent    window可以省略不写
+- Screen    和屏幕相关的对象
+- History    和浏览器历史相关
+    - back()   返回上一个页面
+    - forward()   去下一个页面
+    - go()
+        - 传参数，go(1)  等于forward；go(-1)  等于back()
+- Location   和浏览器地址相关的对象
+    - href  获取和设置浏览器的路径
+- 事件
+    - onclick  点击事件
+- Document   文档对象
+    - document.getElementById("nameId");
 	
 	
 	
