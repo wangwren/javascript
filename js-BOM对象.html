@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		//浏览器信息
+		function run1() {
+			//alert("hehe");
+			alert(window.navigator.userAgent);
+		}
+
+
+		//链接
+		function run2(){
+			//alert(window.location.href);
+			location.href = "http://39.107.99.72:8080";		//可用于后台页面跳转
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="but1" value="浏览器信息" onclick="run1()"><br>
+	<input type="button" name="but2" value="链接" onclick="run2()">
+</body>
+</html>
