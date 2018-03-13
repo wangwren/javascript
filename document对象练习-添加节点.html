@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+		
+		function addLi(){
+
+			//首先先创建一个li标签
+
+			var newLi = document.createElement("li");
+
+			//接着创建一个文本对象
+
+			var newText = document.createTextNode("深圳");
+
+			//将文本对象添加至li标签中
+
+			newLi.appendChild(newText);
+
+			//将li标签添加至ul标签中
+			var place = document.getElementById("place");
+			place.appendChild(newLi);
+		}
+
+		function delLi() {
+			
+			var place = document.getElementById("place");
+			//获取该ul的最后一个元素
+			// var liLast = place.getElementsByTagName("li")[place.getElementsByTagName("li").length - 1];
+			var liLast = place.lastChild;
+			
+			place.removeChild(liLast);
+		}
+
+	</script>
+</head>
+<body>
+	<ul id="place">
+		<li>上海</li>
+		<li>北京</li>
+		<li>广州</li>
+	</ul>
+
+	<input type="button" name="add" value="添加" onclick="addLi()">
+	<input type="button" name="del" value="删除" onclick="delLi()">
+</body>
+</html>
