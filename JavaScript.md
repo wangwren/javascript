@@ -208,8 +208,8 @@ alert(getSum());
         - var reg = new RegExp("表达式");   开发中不经常使用
         - var reg = /表达式/   开发中经常使用
         - var reg = /^表达式$/   开发中经常使用
-            - exec(string)   不经常使用，如果匹配，返回匹配结果
-            - test(string)   经常使用，如果匹配，返回是true，如果不匹配，返回是false
+            - reg.exec(string)   不经常使用，如果匹配，返回匹配结果
+            - reg.test(string)   经常使用，如果匹配，返回是true，如果不匹配，返回是false
 - 全局函数
     - 使用全局函数，不需要任何的对象。
     - 全局函数可以直接拿过来使用。
@@ -237,7 +237,7 @@ alert(getSum());
         - clearInterval(id的值)
         - clearTimeout()
     - close()	关闭浏览器的窗口
-    - open()	打开浏览器窗口
+    - open("url","name","窗口特征")	打开浏览器窗口
     - 属性
         - opener 返回对创建此窗口的窗口的引用。
         - win  open()	弹出baidu的窗口
@@ -257,6 +257,36 @@ alert(getSum());
     - onclick  点击事件
 - Document   文档对象
     - document.getElementById("nameId");
+### DOM文档对象模型
+- Document Object Model
+- 文档:标记型文档(HTML/XML)
+- 对象:封装属性和行为(方法)
+- 模型:共性特征的体现
+- DOM解析HTML
+    - 通过DOM的方法，把HTML全部（元素（标签）、文本、属性）都封装成了对象。
+    - DOM想要操作标记型文档先解析。（解析器）
+    - DOM解析HTML（浏览器就可以解析HTML）
+- DOM的三个级别：
+    1. 将HTML文档封装成对象。
+    2. 在1的基础上添加新的功能，例如:对于事件和CSS样式的支持。
+    3. 支持xml1.0的一些新特性。
+- DHTML不是一种编程语言。
+    - html		：封装数据。	<span>展示给用户的数据</span>
+    - css		：设置样式（显示效果
+    - dom		：操作HTML（解析HTML）
+    - js		：提供逻辑（判断语句，循环语句）
+- Document：代表整个文档。
+    - getElementById("id的值");			通过元素的id的属性获取元素（标签）对象。
+    - getElementsByName("name属性值");		通过名称获取元素对象的集合（返回数组）
+    - getElementsByTagName("标签名称");	通过标签名称获取元素对象的集合（返回数组）
+    - write("文本的内容（html的标签）")		把文本内容写到浏览器上。
+    - createElement("元素名称");		创建元素对象
+    - createTextNode("文本内容")		创建文本对象
+    - appendChild("子节点")				添加子节点
+![](./_image/2018-03-13-20-26-26.png)  
+**按照上面的写，没括号就是没括号**  
+
+
 	
 	
 	
