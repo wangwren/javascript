@@ -317,20 +317,20 @@ alert(getSum());
 			
 			* 使用span的标签获取span中间的文本内容（也是对象）,需要使用firstChild;（不管是什么浏览器）
 ```
-    - 方法
-        - hasChildNodes()		检查是否包含子节点
-        - hasAttributes()		检查是否包含属性
-        - appendChild(node)			父节点调用，在末尾添加子节点
-        - insertBefore(new,old)		父节点调用，在指定节点之前添加子节点
-        - replaceChild(new,old)		父节点调用，替换节点
-        - removeChild(node)			父节点调用,删除节点
-        - cloneNode(boolean)		不是父节点调用,复制节点
+- 方法
+    - hasChildNodes()		检查是否包含子节点
+     - hasAttributes()		检查是否包含属性
+    - appendChild(node)			父节点调用，在末尾添加子节点
+    - insertBefore(new,old)		父节点调用，在指定节点之前添加子节点
+    - replaceChild(new,old)		父节点调用，替换节点
+    - removeChild(node)			父节点调用,删除节点
+    - cloneNode(boolean)		不是父节点调用,复制节点
             - boolean：如果是true，复制子节点。如果是false，不复制子节点，默认是false。
 - innerHTML	：获取和设置文本内容。
     - innerHTML属性：
         - 获取文本内容:`uname.innerHTML`
         - 设置文本内容:`uname.innerHTML=""`
-        - 参见案例:[innerHTML对象]()
+        - 参见案例:[innerHTML对象](https://github.com/wangwren/javascript/blob/master/innerHTML.html)
 - 事件
     - 鼠标移动的事件
         - onmousemove
