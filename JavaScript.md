@@ -297,12 +297,15 @@ alert(getSum());
     - nodeType		：节点类型
     - nodeValue		：节点的值
     - parentNode	获取父节点（返回永远是一个元素节点）
+
+
 |IE6-8|IE9-11  Chrome  FireFox|
 |--------------|--------------|
 |firstChild 获取第一个节点|firstElementChild获取第一个节点|
 |lastChild最后一个节点|lastElementChild 最后一个节点|
 |nextSibling 下一同级节点|nextElementSibling下一同级节点|
 |previousSibling 上一同级节点|previousElementSibling?上一同级节点|
+
 ```html
 <ul>
 				<li>北京</li>
