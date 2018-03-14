@@ -284,7 +284,73 @@ alert(getSum());
     - createTextNode("文本内容")		创建文本对象
     - appendChild("子节点")				添加子节点
 ![](./_image/2018-03-13-20-26-26.png)  
-**按照上面的写，没括号就是没括号**  
+**按照上面的写，没括号就是没括号**    
+- Element对象
+    - 获取元素对象
+        - getAttribute("属性名称");	      获取属性的值
+        - setAttribute("属性名称","属性的值");	设置或者修改属性的值
+        - removeAttribute("属性名称");		删除属性
+    - 获取元素下的所有子节点
+        - ul.getElementsByTagName();   需要先获取到子节点的父节点
+- Node节点对象
+    - nodeName		：节点名称
+    - nodeType		：节点类型
+    - nodeValue		：节点的值
+    - parentNode	获取父节点（返回永远是一个元素节点）
+|IE6-8|IE9-11  Chrome  FireFox|
+|--------------|--------------|
+|firstChild 获取第一个节点|firstElementChild获取第一个节点|
+|lastChild最后一个节点|lastElementChild 最后一个节点|
+|nextSibling 下一同级节点|nextElementSibling下一同级节点|
+|previousSibling 上一同级节点|previousElementSibling?上一同级节点|
+```html
+<ul>
+				<li>北京</li>
+			</ul>	
+			
+			* 如果通过ul获取北京的子节点，使用是	ul.firstElementChild;	获取北京的子节点（IE9-11 Chrome FireFox）
+				* 但是如果IE6-8，需要使用firstChild;	
+				
+			<span id="spanId">
+				文本内容
+			</span>	
+			
+			* 使用span的标签获取span中间的文本内容（也是对象）,需要使用firstChild;（不管是什么浏览器）
+```
+    - 方法
+        - hasChildNodes()		检查是否包含子节点
+        - hasAttributes()		检查是否包含属性
+        - appendChild(node)			父节点调用，在末尾添加子节点
+        - insertBefore(new,old)		父节点调用，在指定节点之前添加子节点
+        - replaceChild(new,old)		父节点调用，替换节点
+        - removeChild(node)			父节点调用,删除节点
+        - cloneNode(boolean)		不是父节点调用,复制节点
+            - boolean：如果是true，复制子节点。如果是false，不复制子节点，默认是false。
+- innerHTML	：获取和设置文本内容。
+    - innerHTML属性：
+        - 获取文本内容:`uname.innerHTML`
+        - 设置文本内容:`uname.innerHTML=""`
+        - 参见案例:[innerHTML对象]()
+- 事件
+    - 鼠标移动的事件
+        - onmousemove
+        - onmouseout
+        - onmouseover
+    - 鼠标点击事件
+        - onclick			单击
+        - ondblclick		双击
+    - 加载和卸载
+        - onload		加载
+        - onunload		卸载
+    - 获取焦点和失去焦点
+        - onfocus		获取焦点
+        - onblur		失去焦点
+    - 键盘
+        - onkeyup		按下抬起时触发
+    - 改变事件
+        - onchange
+    - 控制表单的提交
+        - onsubmit
 
 
 	
