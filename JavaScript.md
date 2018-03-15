@@ -353,7 +353,25 @@ alert(getSum());
     - 改变事件
         - onchange
     - 控制表单的提交
-        - onsubmit
+        - onsubmit   需要把onsubmit作用在表单上`<form onsubmit="">`
+        - 值的写法:  `onsubmit="return run()"`
+        - run()必须有返回值，必须返回true或false。返回false表单不能提交，如果没有返回值，默认是表单提交。
+        - run()中写表单的校验。
+        - 可以通过js提交表单。
+```JavaScript
+// 通过id获取form
+		// var form = document.getElementById("formId");
+		// 通过form的name的属性获取表单
+		var form = document.form1;
+		//var name = document.form1.username.value;
+		//alert(name);
+		
+		// 设置提交的路径
+		form.action = "success.html";
+		form.method = "get";
+		// 提交表单
+		form.submit();
+```
 
 
 	
