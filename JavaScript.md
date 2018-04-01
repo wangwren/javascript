@@ -380,7 +380,36 @@ alert(getSum());
 		form.submit();
 ```
 ### AJAX
-
+- AJAX【Asynchronous异步的JS和XML】
+- 什么是AJAX
+    - 客户端（特指PC浏览器）与服务器，可以在**不必刷新整个浏览器**的情况下，与服务器进行异步通讯的技术。即，AJAX是一个**局部刷新**的**异步**通讯技术。
+    - AJAX不是全新的语言，是2005年Google公司推出的一种全新**编程模式**，不是新的编程语言。
+- XMLHttpRequest(非IE浏览器)和ActiveXObject(IE浏览器)
+    - 无需第三方jar包，现代中高版本浏览器中内置了这个异步通讯对象，只需通过JavaScript就可以创建。
+    - 所有浏览器中都内置了异步对象，在默认情况下，该异步对象并没有创建出来。
+```JavaScript
+function createAJAX(){
+	var ajax = null;
+	try{
+	   //IE5-11
+		ajax = new ActiveXObject("microsoft.xmlhttp");
+	}catch(e1){
+    	//非IE
+		ajax = new XMLHttpRequest();
+	}
+	return ajax;
+}
+```
+- 开发步骤
+    1. 创建AJAX异步对象，例如：createAJAX()
+    2. 准备发送异步请求，例如：ajax.open(method,url)
+    3. 如果是POST请求的话，一定要设置AJAX请求头，例如：ajax.setRequestHeader("content-type", "application/x-www-form-urlencoded");如果是GET请求的话，无需设置设置AJAX请求头。
+    4. 真正发送请求体中的数据到服务器，例如：ajax.send(content)。如果是get请求，即传null；如果是post请求就传参数。
+    5. AJAX不断的监听服务端响应的状态变化，例如：ajax.onreadystatechange，后面写一个无名处理函数。
+    6. 在无名处理函数中，获取AJAX的数据后，按照DOM规则，用JS语言来操作Web页面。
+- 应用
+    - [无需刷新整个WEB页面显示服务器响应的当前时间]()
+    - [POST方式验证用户名是否存在]()
 
 
 	
