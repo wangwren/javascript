@@ -408,7 +408,7 @@ function createAJAX(){
     5. AJAX不断的监听服务端响应的状态变化，例如：ajax.onreadystatechange，后面写一个无名处理函数。
     6. 在无名处理函数中，获取AJAX的数据后，按照DOM规则，用JS语言来操作Web页面。
 - 应用
-    - [无需刷新整个WEB页面显示服务器响应的当前时间]()
+    - [无需刷新整个WEB页面显示服务器响应的当前时间](https://github.com/wangwren/javascript/blob/master/js-day01/WebRoot/ajaxTime.jsp)
     - [POST方式验证用户名是否存在]()
 
 
