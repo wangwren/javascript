@@ -1,5 +1,11 @@
 # JavaScript
 ## 目录
+### JavaScript采用Unicode编码，所以JavaScript中不管什么字符串(英文、中文、日文)，每一个字母或汉字都是算一个，即长度都是1。
+```JavaScript
+var str = "Hello你好";
+var size = str.length;
+alert(size);//7
+```
 ### JavaScript语言的组成
 - ECMAScript	标准（js的语法，变量，函数）
 - BOM			（Browser Object Model）	浏览器对象模型
@@ -198,10 +204,10 @@ alert(getSum());
             - 2014,11,14  可以解析
 - Math和数字相关的对象
     - Math对象的静态方法
-    - ceil(x)   上舍入
-    - floor(x)   下舍入
+    - ceil(x)   上舍入，返回比x大的最小整数
+    - floor(x)   下舍入，返回比x小的最大整数
     - round(x)   四舍五入
-    - random()   0-1的随机数
+    - random()   0-1的随机数，带有小数，如果想取整，可以使用floor(Math.random()),向下取整来实现
 - RegExp对象
     - 正则表达式对象
     - 应用:编写注册的表单，对表单输入的内容进行校验
@@ -250,7 +256,8 @@ alert(getSum());
     - back()   返回上一个页面
     - forward()   去下一个页面
     - go()
-        - 传参数，go(1)  等于forward；go(-1)  等于back()
+        - 传参数，go(1)  等于forward；go(-1)  等于back();
+        - go(0) 表示刷新
 - Location   和浏览器地址相关的对象
     - href  获取和设置浏览器的路径
 - 事件
@@ -372,6 +379,8 @@ alert(getSum());
 		// 提交表单
 		form.submit();
 ```
+### AJAX
+
 
 
 	
