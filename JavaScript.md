@@ -409,7 +409,7 @@ function createAJAX(){
     6. 在无名处理函数中，获取AJAX的数据后，按照DOM规则，用JS语言来操作Web页面。
 - 应用
     - [无需刷新整个WEB页面显示服务器响应的当前时间](https://github.com/wangwren/javascript/blob/master/js-day01/WebRoot/ajaxTime.jsp)
-    - [POST方式验证用户名是否存在]()
+    - [POST方式验证用户名是否存在](https://github.com/wangwren/javascript/blob/master/js-day01/WebRoot/register.jsp)
 
 
 	
