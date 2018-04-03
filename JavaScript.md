@@ -417,7 +417,7 @@ function createAJAX(){
 - 应用
     - [无需刷新整个WEB页面显示服务器响应的当前时间](https://github.com/wangwren/javascript/blob/master/js-day01/WebRoot/ajaxTime.jsp)
     - [POST方式验证用户名是否存在](https://github.com/wangwren/javascript/blob/master/js-day01/WebRoot/register.jsp)
-    - [基于XML的异步获取城市级联]()
+    - [基于XML的异步获取城市级联](https://github.com/wangwren/javascript/blob/master/js-day01/WebRoot/provinceCity.jsp)
 - AJAX中的属性事件方法
 
 ![](./_image/11_复习ajax的事件_方法_属性.JPG)
