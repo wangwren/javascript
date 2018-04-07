@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+	<!-- 这里注意继承的包以及action的结果返回类型 -->
+    <package name="mypaceage" extends="json-default" namespace="/">
+    	<action name="findCityByProvince" class="vvr.js.ProvinceCityAreaAction" method="findCityByProvince">
+    		<result name="success" type="json"/>
+    	</action>
+    	
+    	<action name="findAreaByCity" class="vvr.js.ProvinceCityAreaAction" method="findAreaByCity">
+    		<result name="success" type="json"/>
+    	</action>
+    </package>
+</struts>
