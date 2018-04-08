@@ -421,6 +421,49 @@ function createAJAX(){
 - AJAX中的属性事件方法
 
 ![](./_image/11_复习ajax的事件_方法_属性.JPG)
+### JSON
+- JSON(Java Script Object Notation),是一种**轻量级**的**数据交换语言**，以文本字符串为基础，且易于让人阅读
+- JSON采用完全独立于任何程序语言的文本格式，使JSON成为理想的数据交换语言
+- XML就是一个**重量级**的数据交换语言
+#### JSON的作用
+- 简化创建自定义对象的方式
+- JSON就是用JS语法来书写，所以必须放在<script>标签中，在用JS语法书写JSON时，最外面不要用""双引号
+```JavaScript
+var p = {
+			id:1,
+			name:"哈哈",
+			tel:[
+					{
+						no:"135",
+						type:"中移动"
+					},
+					{
+						no:"133",
+						type:"中联通"
+					}
+				],
+			show:function(username){
+				alert("你的姓名是:" + p.name+":"+username);
+			},
+			isSingle:false			
+		};
+```
+- 属性名也可以打双引号("")，各个属性之间用逗号(,)隔开。
+```JavaScript
+var p = {'city':['北京','上海','广州','深圳']};
+for(var i=0;i<p.city.length;i++){
+	document.write(p.city[i]+"<br/>");
+}
+```
+- 在AJAX中，作为数据载体之一。
+    - **注意**:JS可以直接解析JSON格式的文本，前提是：该JSON必须采用JS格式书写的才行，如果JSON是采用Java格式写的，必须使用eval()函数转换后，方可被JS解析，该eval("")函数接收一个字符串格式的内容。
+- [省份-城市-区域三级联动Struts2+json版]()
+- 也可以使用第三方工具jar包，将JavaBean对象/List/Set/Map对象转成json，不仅仅依赖Struts2.
+#### 特点
+- 在客户端（特指PC浏览器），直接使用JavaScript语言解析JSON，无需第三方jar包
+- 本质上，就是一个文本，只是该文本有特定的书写格式
+- JSON与XML很相似，但是它更加轻巧，服务器只需**发送一个html普通字符串**，不用发送复杂的xml格式文档了
+- JSON本质上，就是用JS语法写的特殊文本记号，用JS可以直接解析
 
 
 
