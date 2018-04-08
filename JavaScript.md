@@ -457,7 +457,7 @@ for(var i=0;i<p.city.length;i++){
 ```
 - 在AJAX中，作为数据载体之一。
     - **注意**:JS可以直接解析JSON格式的文本，前提是：该JSON必须采用JS格式书写的才行，如果JSON是采用Java格式写的，必须使用eval()函数转换后，方可被JS解析，该eval("")函数接收一个字符串格式的内容。
-- [省份-城市-区域三级联动Struts2+json版]()
+- [省份-城市-区域三级联动Struts2+json版](https://github.com/wangwren/javascript/tree/master/js-day02)
 - 也可以使用第三方工具jar包，将JavaBean对象/List/Set/Map对象转成json，不仅仅依赖Struts2.
 #### 特点
 - 在客户端（特指PC浏览器），直接使用JavaScript语言解析JSON，无需第三方jar包
