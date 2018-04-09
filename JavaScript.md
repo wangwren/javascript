@@ -464,7 +464,64 @@ for(var i=0;i<p.city.length;i++){
 - 本质上，就是一个文本，只是该文本有特定的书写格式
 - JSON与XML很相似，但是它更加轻巧，服务器只需**发送一个html普通字符串**，不用发送复杂的xml格式文档了
 - JSON本质上，就是用JS语法写的特殊文本记号，用JS可以直接解析
-
+#### 模拟jQuery库，体验使用第三方实用库的特点【图片隐藏与显示】
+```JavaScript
+<script type="text/javascript">
+//定义一个Photo函数，看作是一个类
+function Photo(){
+	//属性
+	var imgElement = document.images[0];
+	//方法
+	this.show = function(){
+		imgElement.style.visibility = "visible";
+	}
+	this.hide = function(){
+		imgElement.style.visibility = "hidden";
+	}
+}
+//定义一个$()函数，用来定位标签
+function $(str){
+	//如果str变量是字符串类型
+	if( typeof(str) == "string" ){
+		//获取str变量中的第一个字符
+		var init = str.substring(0,1);
+		//如果第一个字符是#的话
+		if("#" == init){
+			//获取str变量中除第一个字符外的其它字符
+			var other = str.substring(1,str.length);
+			//通过ID定位节点
+			var element = document.getElementById(other);
+			//如果找到了节点
+			if(element != null){
+				//返回
+				return element;
+			}else{
+				//返回
+				return null;
+			}
+		}else{
+			//继续判断
+		}
+	}else{
+		alert("参数必须为string类型");
+	}	
+}
+</script>
+<script type="text/javascript">
+		//创建一个Photo对象
+		var p = new Photo();
+		//定位隐藏按钮，同时添加单击事件
+		$("#hide").onclick = function(){
+			//调用Photo对象的方法
+			p.hide();
+		}
+		//定位显示按钮，同时添加单击事件
+		$("#show").onclick = function(){
+			//调用Photo对象的方法
+			p.show();
+		}
+</script>
+```
 
 
 	
