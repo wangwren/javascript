@@ -522,8 +522,70 @@ function $(str){
 		}
 </script>
 ```
-
-
+### jQuery
+John Resig在2006年1月发布的一款跨主流浏览器的JavaScript库，简化JavaScript对HTML操作
+#### 使用jQuery
+- 写少代码，做多事情
+- 免费，开源且轻量级的js库，容量很小
+    - 项目中，提倡引用min版的js库
+- 兼容市面上主流浏览器，例如 IE，Firefox，Chrome
+    - jQuery不是将所有JS全部封装，只是有选择的封装
+- 能够处理HTML/JSP/XML、CSS、DOM、事件、实现动画效果，也能提供异步AJAX功能
+- 文档手册很全，很详细
+- 成熟的插件可供选择
+- 提倡对主要的html标签提供一个id属性，但不是必须的
+- 不用再在html里面通过<script>标签插入一大堆js来调用命令了
+#### 开发步骤
+```JavaScript
+//var divElement = document.getElementById("divID");
+var $div = $("#divID");
+//var html = divElement.innerHTML;
+var html = $div.html();
+alert(html);
+```
+#### js对象和jQuery对象相互转换
+- 什么是js对象及代码规则
+    - 就是使用js-API，即Node接口中的API或是传统JS语法定义的对象，叫做js对象
+- 什么是jQuery对象及代码规则
+    - 就是使用jQuery-API，返回的对象就叫做jQuery对象
+- **js对象转成jQuery对象**
+    - 语法: $(js对象)---->jQuery对象
+```JavaScript
+var inputElement = document.getElementById("inputID");//js对象
+//jQuery对象将js对象做了封装，js对象二边无引号 
+var $input = $(inputElement);//jquery对象
+var txt = $input.val();
+alert(txt);
+```
+- **jQuery对象转成js对象**
+    - 语法1：jQuery对象[下标，从0开始]
+    - 语法2：jQuery对象.get(下标，从0开始)
+```JavaScript
+var $div = $("#divID");//jquery对象
+var divElement = $div[0];//js对象(方式一)
+//var divElement = $div.get(0);//js对象(方式二)
+var txt = divElement.innerHTML;		  
+alert(txt);
+```
+注意:**不同的对象只能调用对应的api方法，即jQuery对象不能调用js对象的api，反之亦然**  
+```JavaScript
+$div.innerHTML（错）//jQuery调js
+divElement.html(错)  //js调jQuery
+```
+#### js对象和jQuery对象的区别
+- js对象的三种基本定位方式
+    - 通过ID属性：`document.getElementById()`
+    - 通过NAME属性：`document.getElementsByName()`
+    - 通过标签名：`document.getElementsByTagName()`
+- jQuery对象的三种基本定位方式
+    - 通过ID属性：$("#id属性值")
+    - 通过标签名：$("标签名")
+    - 通过CLASS属性：$(".样式名")
+- js对象出错的显示
+    - 没有合理的提示信息
+- jQuery对象出错的显示
+    - 有合理的提示信息，例如：undefined
+#### jQuery九类选择器
 	
 	
 	
