@@ -586,6 +586,17 @@ divElement.html(错)  //js调jQuery
 - jQuery对象出错的显示
     - 有合理的提示信息，例如：undefined
 #### jQuery九类选择器
+目的:通过九类选择器，能定位web页面(HTML/JSP/XML)中的任何标签。  
+- 基本选择器
+- 层次选择器
+- 增强基本选择器
+- 内容选择器
+- 可见性选择器
+- 属性选择器
+- 子元素选择器
+- 表单选择器
+- 表单对象属性选择器
+- [找到一个jQuery在线文档](http://www.jq22.com/chm/jquery/index.html)
 	
 	
 	
