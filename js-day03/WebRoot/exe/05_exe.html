@@ -2,7 +2,7 @@
 <html>
   <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<script type="text/javascript" src="/js-day04/js/jquery-1.8.2.js"></script> 
+	<script type="text/javascript" src="../jquery/jquery.js"></script>
   </head>
   <body>
   	<table id="tableID" border="1" align="center" width="60%">
@@ -33,6 +33,48 @@
   
   <script type="text/javascript">
   		//定位"增加"按钮，同时添加单击事件
+  		$("#addID").click(function(){
+  			var $username = $("#usernameID").val();
+  			var $password = $("#passwordID").val();
+  			//去掉两边空格
+  			$username = $.trim($username);
+  			$password = $.trim($password);
+  			
+  			if($username.length == 0 || $password.length == 0){
+  				alert("用户名或密码没有填写！！！");
+  			}else{
+  				//创建标签
+  				//var $tr = $("<tr></tr>");  以这种方式可以创建一个tr标签
+	  			//$("#tableID #tbodyID").append("<tr><td>"+$username+"</td><td>"+$password+"</td><td><input type='button' value='删除' onclick=''/></td></tr>");
+	  			//以上这种动态添加，导致删除很麻烦
+	  			
+	  			//另一种写法
+	  			//创建标签
+	  			var $tr = $("<tr></tr>");
+	  			var $utd = $("<td>"+$username+"</td>");
+	  			var $ptd = $("<td>"+$password+"</td>");
+	  			var $dtd = $("<td></td>")
+	  			var $del = $("<input type='button' value='删除'/>")
+	  			
+	  			$dtd.append($del);
+	  			$tr.append($utd);
+	  			$tr.append($ptd);
+	  			$tr.append($dtd);
+	  			
+	  			$("#tableID #tbodyID").append($tr);
+	  			
+	  			$("#usernameID").val("");
+	  			$("#passwordID").val("")
+	  			
+	  			
+	  			//删除
+	  			$del.click(function(){
+	  				//都在同一函数内，tr删除了，td也就被删除了
+	  				$tr.remove();
+	  			});
+  			}
+  			
+  		});
   </script>
   
 </html>
