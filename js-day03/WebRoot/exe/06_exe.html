@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="../jquery/jquery.js"></script>
 	</head>
 	<body>
 		<table border="1" align="center">
@@ -49,7 +49,26 @@
 		
 		<script type="text/javascript">
 			//全选中和全取消
+			$("table tfoot :checkbox").click(function(){
+				/* 
+				只能实现一次，第二次全选的时候不好使了，不知道为啥
+				var checkBoxCh = $("table tbody input").attr("checked");
+				alert(checkBoxCh);
+				if(checkBoxCh == undefined){
+					$("table tbody input").attr("checked","checked");
+				}else{
+					$("table tbody input").removeAttr("checked");
+				} */
+				
+				var flag = this.checked;
+				if(flag){
+					$("table tbody :checkbox").attr("checked","checked");
+				}else{
+					$("table tbody :checkbox").removeAttr("checked");
+				}
+			});
 		</script>
+		
 		<script type="text/javascript">
 			//全反选
 		</script>
