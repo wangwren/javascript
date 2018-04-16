@@ -1,26 +1,38 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
+  	<title>交税</title>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery.js"></script>
     
-    <title>My JSP 'index.jsp' starting page</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
   </head>
   
   <body>
-    This is my JSP page. <br>
+  	<form action="" method="post">
+  		税前工资:<input id="salText" type="text" name="sal">&nbsp;&nbsp;
+  		<input id="btn" type="button" value="计算">
+  		<br/>
+  		交税:<span id="taxeSpan"></span>
+  		
+  	</form>
+  	
+  	
+  	<script type="text/javascript">
+    	$("#btn").click(function(){
+    		var salText = $("#salText").val();
+    		salText = $.trim(salText);
+    		if(salText.length == 0){
+    			alert("请输入您的工资！！！");
+    		}else{
+	    		var url = "${pageContext.request.contextPath }/PayTaxesServlet?time=" + new Date().getTime();
+	    		var data = {
+	    			'salText' : salText
+	    		};
+	    		$.post(url,data,function(backData){
+	    			$("#taxeSpan").text(backData);
+	    		});
+    		}
+    	});
+    </script>
   </body>
 </html>

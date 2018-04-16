@@ -4,10 +4,10 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<style type="text/css">
 		.myClass{
-			color:inactivecaption
+			color:infobackground
 		}
 	</style>
-    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="../jquery/jquery.js"></script>
   </head>
   <body>
 	<table border="1" align="center">
@@ -20,6 +20,34 @@
 	</table>
 	
 	<script type="text/javascript">
+		//当浏览器加载页面时
+		$(function(){
+			//改变文本框中的样式
+			$(":text").addClass("myClass");
+		});
+		
+		//当光标定位至文本框时，清空文本框中的文字和样式
+		$(":text").focus(function(){
+			//如果文字是“输入用户名”就清空，否则不清空
+			var name = $(this).val();
+			if(name == "输入用户名"){
+				//清空文字
+				$(this).val("");
+				//清空样式
+				$(this).removeClass("myClass");
+			}
+		});
+		
+		//当光标移出并且文本框中没有内容时，显示原有样式和文字
+		$(":text").blur(function(){
+			var name = $(this).val();
+			//去除空格
+			name = $.trim(name);
+			if(name.length == 0){
+				$(this).val("输入用户名");
+				$(this).addClass("myClass");
+			}
+		});
 	</script>	
 	
   </body>
