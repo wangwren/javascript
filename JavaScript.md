@@ -656,7 +656,7 @@ divElement.html(错)  //js调jQuery
 - submit：在提交表单时触发，true表示提交到后台，false表示不提交到后台
 - click：单击触发
 - dblclick：双击触发
-- blur：焦点失去
+- blur：焦点失去  
 [练习](https://github.com/wangwren/javascript/tree/master/js-day03)
 
 	
