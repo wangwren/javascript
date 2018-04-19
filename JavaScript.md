@@ -640,6 +640,24 @@ divElement.html(错)  //js调jQuery
     - slideUp()：向上滑动
     - slideDown()：向下滑动
     - slideToggle()：上下切换滑动，速度快点
+#### jQuery常用Event-API
+目的:对web页面(HTML/JSP)进行事件触发，完成特殊效果的处理
+    - window.onload:在浏览器加载web页面时触发，可以写多次onload事件，但后者覆盖前者
+    - ready：在浏览器加载web页面时触发，可以写多次ready事件，不会后者覆盖前者，依次从上向下执行，我们常用$(函数)简化
+        - ready和onload同时存在时，二者都会触发执行，ready快于onload
+        - 也可以直接`$(function(){}`来触发
+    - change：当内容改变时触发
+    - focus：焦点获取
+    - select：选中所有的文本值
+    - keyup/keydown/keypress：演示在IE和Firefox中获取event对象的不同
+    - mousemove：在指定区域中不断移动触发
+    - mouseover：鼠标移入时触发
+    - mouseout：鼠标移出时触发
+    - submit：在提交表单时触发，true表示提交到后台，false表示不提交到后台
+    - click：单击触发
+    - dblclick：双击触发
+    - blur：焦点失去
+
 	
 	
 	
