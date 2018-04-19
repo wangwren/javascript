@@ -657,6 +657,7 @@ divElement.html(错)  //js调jQuery
 - click：单击触发
 - dblclick：双击触发
 - blur：焦点失去
+[练习](https://github.com/wangwren/javascript/tree/master/js-day03)
 
 	
 	
